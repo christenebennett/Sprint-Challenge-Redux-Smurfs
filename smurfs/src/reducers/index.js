@@ -13,7 +13,7 @@ const initialState = {
   error: null
 }
 
-export const reducer = ( state = initialState, action ) {
+export const reducer = ( state = initialState, action ) => {
   switch(action.type){
     case FETCHING:
       return {...state, smurfs: [], fetchingSmurfs: true, error: null}
@@ -22,7 +22,9 @@ export const reducer = ( state = initialState, action ) {
     case FAILURE:
       return {...state, smurfs: [], fetchingSmurfs: false, error: 'WHOOPS....ERROR!'}
     case ADD_SMURF:
-      return {...state, smurfs: [action.payload], fetchingSmurfs: false, error: null}  
+      return {...state, smurfs: [action.payload], fetchingSmurfs: false, error: null} 
+    default:
+      return state;
     }
 }
 
