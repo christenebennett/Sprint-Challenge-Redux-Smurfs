@@ -11,7 +11,7 @@ class SmurfCard extends React.Component {
   }
   render(){
     return (
-      <div className="smurf-card" key={this.props.id}>
+      <div className="smurf-card" >
         <div>Name: {this.props.name}</div>
         <div>Age: {this.props.age}</div>
         <div>Height: {this.props.height}</div>

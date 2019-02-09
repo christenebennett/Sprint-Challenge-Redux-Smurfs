@@ -30,6 +30,7 @@ class App extends Component {
             console.log({smurf})
             return (
               <SmurfCard 
+                key={smurf.id}
                 id={smurf.id}
                 name={smurf.name}
                 age={smurf.age}
