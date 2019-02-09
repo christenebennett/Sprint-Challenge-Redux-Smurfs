@@ -27,11 +27,10 @@ class App extends Component {
           <h1>SMURFS! 2.0 W/ Redux</h1>
           <AddSmurf />
           <div>{this.props.smurfs.map(smurf => {
-            console.log(smurf)
+            console.log({smurf})
             return (
               <SmurfCard 
-                key={smurf.smurfId}
-                id={smurf.smurfId}
+                id={smurf.id}
                 name={smurf.name}
                 age={smurf.age}
                 height={smurf.height}/> 

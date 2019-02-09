@@ -2,7 +2,7 @@
   Be sure to import in all of the action types from `../actions`
 */
 
-import { FETCHING, SUCCESS, FAILURE, ADD_SMURF } from '../actions';
+import { FETCHING, SUCCESS, FAILURE, ADD_SMURF, DELETE_SMURF } from '../actions';
 
 const initialState = {
   smurfs: [],
@@ -22,6 +22,8 @@ export const reducer = ( state = initialState, action ) => {
     case FAILURE:
       return {...state, smurfs: [], fetchingSmurfs: false, error: 'WHOOPS....ERROR!'}
     case ADD_SMURF:
+      return {...state, smurfs: action.payload, fetchingSmurfs: false, error: null} 
+    case DELETE_SMURF:
       return {...state, smurfs: action.payload, fetchingSmurfs: false, error: null} 
     default:
       return state;
