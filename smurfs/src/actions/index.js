@@ -16,16 +16,36 @@ export function fetchData(){
     axios
       .get('http://localhost:3333/smurfs')
       .then (response => {
-        console.log(response.data)
         dispatch({
           type: SUCCESS,
           payload: response.data
         })
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        dispatch({
+          type: FAILURE
+        })
+      })
   }
 }
 
+export function addSmurf(smurf){
+  return dispatch => {
+    axios
+      .post('http://localhost:3333/smurfs', smurf)
+      .then(response => {
+        dispatch({
+          type: SUCCESS,
+          payload: response.data
+        })
+      })
+      .catch(error => {
+        dispatch({
+          type: FAILURE
+        })
+      })
+  }
+}
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.

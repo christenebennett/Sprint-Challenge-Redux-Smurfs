@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+import SmurfCard from './SmurfCard';
+import AddSmurf from './AddSmurf';
 import { connect } from 'react-redux';
 import { fetchData } from '../actions';
+
 
 /*
  to wire this component up you're going to need a few things.
@@ -22,14 +25,16 @@ class App extends Component {
       return (
         <div className="App">
           <h1>SMURFS! 2.0 W/ Redux</h1>
+          <AddSmurf />
           <div>{this.props.smurfs.map(smurf => {
+            console.log(smurf)
             return (
-              <div className="smurf-card" key={smurf.smurfId}>
-                <div>{smurf.name}</div>
-                <div>{smurf.age}</div>
-                <div>{smurf.height}</div>
-              </div>
-              
+              <SmurfCard 
+                key={smurf.smurfId}
+                id={smurf.smurfId}
+                name={smurf.name}
+                age={smurf.age}
+                height={smurf.height}/> 
             )
           })}</div>
           

@@ -18,11 +18,11 @@ export const reducer = ( state = initialState, action ) => {
     case FETCHING:
       return {...state, smurfs: [], fetchingSmurfs: true, error: null}
     case SUCCESS:
-      return {...state, smurfs: [action.payload], fetchingSmurfs: false, error: null}
+      return {...state, smurfs: action.payload, fetchingSmurfs: false, error: null}
     case FAILURE:
       return {...state, smurfs: [], fetchingSmurfs: false, error: 'WHOOPS....ERROR!'}
     case ADD_SMURF:
-      return {...state, smurfs: [action.payload], fetchingSmurfs: false, error: null} 
+      return {...state, smurfs: action.payload, fetchingSmurfs: false, error: null} 
     default:
       return state;
     }
