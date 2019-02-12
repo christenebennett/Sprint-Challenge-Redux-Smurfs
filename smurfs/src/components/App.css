@@ -26,3 +26,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.smurf-card {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid rgba(50,50,50,0.2);
+  width: 90%;
+  margin: 10px auto;
+  padding: 5px;
+  max-width: 500px; 
+
+}
